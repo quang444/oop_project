@@ -12,10 +12,6 @@ import org.springframework.ui.Model;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	int adminlogcheck = 0;
-	String usernameforclass = "";
-	
-	
 	@GetMapping("login")
 	public String adminLogin(Model model) {
 		
@@ -23,28 +19,28 @@ public class AdminController {
 	}
 	@GetMapping("")
 	public String adminHome(Model model) {
-		if(adminlogcheck!=0)
+		// if(adminlogcheck!=0)
 			return "admin/adminHome";
-		else
-			return "redirect:/admin/login";
+		// else
+			// return "redirect:/admin/login";
 	}
-	@GetMapping("admin-login")
-	public String adminLog(Model model) {
+	// @GetMapping("admin-login")
+	// public String adminLog(Model model) {
 		
-		return "admin/adminLogin";
-	}
-	@RequestMapping(value = "admin-login", method = RequestMethod.POST)
-	public String adminLogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model) {
+	// 	return "admin/adminLogin";
+	// }
+	// @RequestMapping(value = "admin-login", method = RequestMethod.POST)
+	// public String adminLogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model) {
 		
-		if(username.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123")) {
-			adminlogcheck=1;
-			return "redirect:/admin";
-			}
-		else {
-			model.addAttribute("message", "Invalid Username or Password");
-			return "admin/adminLogin";
-		}
-	}
+	// 	if(username.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("123")) {
+	// 		adminlogcheck=1;
+	// 		return "redirect:/admin";
+	// 		}
+	// 	else {
+	// 		model.addAttribute("message", "Invalid Username or Password");
+	// 		return "admin/adminLogin";
+	// 	}
+	// }
 
 	@GetMapping("shipper")
 	public String adminShipper(Model model) {

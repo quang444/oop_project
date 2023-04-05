@@ -11,10 +11,6 @@ import org.springframework.ui.Model;
 
 @Controller
 public class HomeController {
-	int adminlogcheck = 0;
-	String usernameforclass = "";
-	//Home ver
-    
 	@GetMapping(value = {"about"})
 	public String about(Model model) {
 		return "home/about";
