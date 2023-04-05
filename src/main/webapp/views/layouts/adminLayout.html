@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="admin_head">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+<title>Trang chủ</title>
+<style>
+	*{
+  margin: 0; padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.collapse ul {
+	margin: 0; padding: 0;
+}
+.collapse li {
+	position: relative;
+	white-space: nowrap;
+	cursor: pointer;
+	text-transform: capitalize !important;
+	list-style: none;
+}
+.collapse li:hover {
+	background-color: #b9b9b9;
+	color: #343434;
+}
+.collapse ul li.topmenu {
+	display: inline-table;
+	padding: .3em 1em;
+}
+.collapse .topmenu ul {
+	display:none;
+	position: absolute;
+	background-color: #343a40;
+}
+.collapse li:hover > ul {
+	display: table;
+}
+.collapse ul.submenu {
+	top: 100%; left: 0;
+	padding-top: .5em;
+	padding-bottom: .5em;	
+	box-shadow: 0 0 10px black;
+}
+.collapse ul.submenu .submenu {
+	top: -.5em; left: 100%;
+	font-size: 1em
+}
+.collapse ul.submenu li {
+	padding: .2em 1.5em;
+	font-size: .9rem;
+}
+
+
+
+</style>
+</head>
+
+<body class="bg-dark">
+<header th:fragment="admin_header">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+					<li class="nav-item active topmenu"><a class="nav-link" href="/admin">Home Page</a></li>
+					<li class="nav-item active topmenu"><a class="nav-link">Manage</a>
+						<ul class="submenu">
+							<li class="nav-item active"><a class="nav-link" href="/admin/shipper">Shippers</a>
+							<li class="nav-item active"><a class="nav-link" href="/admin/order">Orders</a>
+							<li class="nav-item active"><a class="nav-link" href="/admin/user">Users</a>
+						</ul>
+									
+					</li>
+					<li class="nav-item active topmenu"><a class="nav-link" href="/admin/thong-ke">Statistic</a></li>
+					<li class="nav-item active topmenu"><a class="nav-link" href="/admin/bao-cao">Report</a></li>
+					<li class="nav-item active topmenu"><a class="nav-link" href="/admin/login">Logout</a></li>
+
+				</ul>
+
+			</div>
+			
+		</div>
+	</nav>
+</header>
+<div th:fragment="admin_content">
+  <p>Changing contents</p>
+</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+</html>

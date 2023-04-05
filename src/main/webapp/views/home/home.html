@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/homeLayout :: home_head"> 
+</head>
+<body>
+    <!-- <th:block layout:include="layouts/header"/> -->
+    <header th:replace="layouts/homeLayout :: home_header"></header>
+    <div>
+        <h1>This is Home</h1>
+    </div>
+    <footer th:replace="layouts/homeLayout :: home_footer"></footer>
+</body>
+
+</html>

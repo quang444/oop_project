@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/adminLayout :: admin_head">
+</head>
+
+<body class="bg-dark">
+    <header th:replace="layouts/adminLayout :: admin_header"></header>
+	<div class="jumbotron text-center">
+		<h1 class="display-4">Welcome Back, Admin</h1><hr>
+		<p>Manage your data from this Admin Panel</p>
+	</div><br>
+	<div class="container-fluid" >
+		<div class="row justify-content-center">
+			<div class="col-sm-3 pt-4">
+				<div class="card border border-info" style="background-color: white;">
+					<div class="card-body text-center">
+						<h4 class="card-title">Shippers</h4>
+						<p>---------------------------------------------</p>
+						<p class="card-text">Manage the shippers section here.</p>
+						<a href="/admin/shipper" class="card-link btn btn-primary">Manage</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 pt-4">
+				<div class="card" style="background-color: white;">
+					<div class="card-body text-center">
+						<h4 class="card-title">Orders</h4>
+						<p>---------------------------------------------</p>
+						<p class="card-text">Manage all the orders here.</p>
+						<a href="/admin/order" class="card-link btn btn-primary">Manage</a>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3 pt-4">
+				<div class="card" style="background-color: white;">
+					<div class="card-body text-center">
+						<h4 class="card-title">Users</h4>
+						<p>---------------------------------------------</p>
+						<p class="card-text">Manage all the users here.</p>
+						<a href="/admin/user" class="card-link btn btn-primary">Manage</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+</body>
+</html>
