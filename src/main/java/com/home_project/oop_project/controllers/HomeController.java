@@ -14,15 +14,7 @@ public class HomeController {
 	int adminlogcheck = 0;
 	String usernameforclass = "";
 	//Home ver
-    @GetMapping(value = {"/","home"})
-	public String home(Model model) {
-		if(usernameforclass.equalsIgnoreCase(""))
-			return "redirect:/login";
-		else {
-			model.addAttribute("username", usernameforclass);
-			return "home/home";
-		}
-	}
+    
 	@GetMapping(value = {"about"})
 	public String about(Model model) {
 		return "home/about";

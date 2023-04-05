@@ -7,24 +7,32 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
-
 	int adminlogcheck = 0;
 	String usernameforclass = "";
-	@RequestMapping(value = {"/login"})
-	public String returnIndex() {
+	
+	
+	@GetMapping("login")
+	public String userLogin(Model model) {
 		adminlogcheck =0;
 		usernameforclass = "";
 		return "home/userLogin";
 	}
-	
-	
-	@GetMapping("/user-login")
-	public String userLog(Model model) {
+	@GetMapping("/")
+	public String Home(Model model) {
+		if(usernameforclass.equalsIgnoreCase(""))
+			return "redirect:/login";
+		else {
+			model.addAttribute("username", usernameforclass);
+			return "home/home";
+		}
+	}
+	@GetMapping("user-login")
+	public String adminLog(Model model) {
 		
 		return "home/userLogin";
 	}
 	@RequestMapping(value = "user-login", method = RequestMethod.POST)
-	public String userlogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model) {
+	public String userLogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model) {
 		
 		try
 		{
@@ -34,7 +42,7 @@ public class UserController {
 			ResultSet rst = stmt.executeQuery("select * from users where username = '"+username+"' and password = '"+ pass+"' ;");
 			if(rst.next()) {
 				usernameforclass = rst.getString(2);
-				return "redirect:/home";
+				return "redirect:/";
 				}
 			else {
 				model.addAttribute("message", "Invalid Username or Password");
@@ -47,8 +55,6 @@ public class UserController {
 			System.out.println("Exception:"+e);
 		}
 		return "home/userLogin";
-		
-		
 		
 	}
 	
