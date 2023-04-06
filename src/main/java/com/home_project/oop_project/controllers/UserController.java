@@ -52,11 +52,11 @@ public class UserController {
 		
 	// }
 	
-	// @GetMapping("/register")
-	// public String registerUser()
-	// {
-	// 	return "home/register";
-	// }
+	@GetMapping("/register")
+	public String registerUser()
+	{
+		return "home/register";
+	}
 	// @RequestMapping(value = "newuserregister", method = RequestMethod.POST)
 	// public String newUseRegister(@RequestParam("username") String username,@RequestParam("password") String password,@RequestParam("email") String email)
 	// {
