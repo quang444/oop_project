@@ -23,7 +23,7 @@ public class UserController {
 	// @GetMapping("user-login")
 	// public String adminLog(Model model) {
 		
-	// 	return "home/userLogin";
+	// 	return "home/userLogin";  
 	// }
 	// @RequestMapping(value = "user-login", method = RequestMethod.POST)
 	// public String userLogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model) {
