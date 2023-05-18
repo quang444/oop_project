@@ -2,6 +2,9 @@ package com.home_project.oop_project.service.impl;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.home_project.oop_project.entity.Order;
@@ -41,4 +44,8 @@ public class OrderServiceImpl implements OrderService{
 	public void deleteOrderById(Long id) {
 		orderRepository.deleteById(id);	
 	}
+
+
+
+	
 }

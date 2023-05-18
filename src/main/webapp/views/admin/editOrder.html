@@ -1,83 +1,86 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>order Management System</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/adminLayout :: admin_head">
+	<title>Order Management System</title>
+	<!-- <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"> -->
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">order Management System</a>
+<header th:replace="layouts/adminLayout :: admin_header"></header>
+<div class = "container">
+	<div class = "row">
+		<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			<h1 class = "text-center"> Update order </h1>
+			<div class = "card-body">
+				<form th:action="@{/admin/order/update/{id} (id=${order.id})}" th:object = "${order}" method="POST">
+					<div class ="form-group">
+						<label> order startPoint </label>
+						<input
+								type = "text"
+								name = "startPoint"
+								th:field = "*{startPoint}"
+								class = "form-control"
+								placeholder="Enter order startPoint"
+						/>
+					</div>
 
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+					<div class ="form-group">
+						<label> order endPoint </label>
+						<input
+								type = "text"
+								name = "endPoint"
+								th:field = "*{endPoint}"
+								class = "form-control"
+								placeholder="Enter order endPoint"
+						/>
+					</div>
 
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/orders}">order Management</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<br>
-<br>
-	<div class = "container">
-		<div class = "row">
-			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Update order </h1>
-				<div class = "card-body">
-					<form th:action="@{/orders/{id} (id=${order.id})}" th:object = "${order}" method="POST">
-						<div class ="form-group">
-							<label> order First Name </label>
-							<input
-							type = "text"
-							name = "firstName"
-							th:field = "*{firstName}"
-							class = "form-control"
-							placeholder="Enter order First Name" 
-							/>
-						</div>
-						
-						<div class ="form-group">
-							<label> order Last Name </label>
-							<input
-							type = "text"
-							name = "lastName"
-							th:field = "*{lastName}"
-							class = "form-control"
-							placeholder="Enter order Last Name" 
-							/>
-						</div>
-						
-						<div class ="form-group">
-							<label> order Email </label>
-							<input
-							type = "text"
-							name = "email"
-							th:field = "*{email}"
-							class = "form-control"
-							placeholder="Enter order Email" 
-							/>
-						</div>
-						
-						<div class = "box-footer">
-							<button type="submit" class = "btn btn-primary">
-								Submit
-							</button>
-						</div>
-					</form>
-				
-				</div>
+					<div class ="form-group">
+						<label> order value </label>
+						<input
+								type = "text"
+								name = "value"
+								th:field = "*{value}"
+								class = "form-control"
+								placeholder="Enter order value"
+						/>
+					</div>
+
+					<div class ="form-group">
+						<label> order shipperID </label>
+						<input
+								type = "text"
+								name = "shipper_id"
+								th:field = "*{shipperID}"
+								class = "form-control"
+								placeholder="Enter order shipper id"
+						/>
+					</div>
+
+					<div class ="form-group">
+						<label> order status </label>
+						<input
+								type = "text"
+								name = "status"
+								th:field = "*{status}"
+								class = "form-control"
+								placeholder="Enter order status"
+						/>
+					</div>
+
+
+					<div class = "box-footer">
+						<button type="submit" class = "btn btn-primary">
+							Submit
+						</button>
+					</div>
+				</form>
+
 			</div>
 		</div>
 	</div>
+</div>
 </body>
 </html>

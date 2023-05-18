@@ -23,14 +23,14 @@ public class OopProjectApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		
 		
-		 Order student1 = new Order("Ramesh", "Fadatare", "ramesh@gmail.com","3","5");
-		 orderRepository.save(student1);
-		 
-		  Order student2 = new Order("Sanjay", "Jadhav", "sanjay@gmail.com","4","ok");
-		  orderRepository.save(student2);
-		  
-		  Order student3 = new Order("tony", "stark", "tony@gmail.com","oke","5");
-		  orderRepository.save(student3);
+//		 Order order1 = new Order("15 Đinh Tiên Hoàng", "Hà Nam",150,17,"ok");
+//		 orderRepository.save(order1);
+//
+//		  Order order2 = new Order("Đà Nẵng", "Hải Phòng", 1200000,4,"ok");
+//		  orderRepository.save(order2);
+//
+//		  Order order3 = new Order("Tân Sơn Nhất", "Đại La", 15000000,4,"not ok");
+//		  orderRepository.save(order3);
 		 
 		
 	}

@@ -1,5 +1,8 @@
 package com.home_project.oop_project.controllers;
 
+import java.util.List;
+
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +25,10 @@ public class OrderController {
 	}
 	
 	// handler method to handle list orders and return mode and view
-	@GetMapping("/")
+	@GetMapping(value={"","/"})
 	public String listOrders(Model model) {
-		model.addAttribute("orders", orderService.getAllOrders());
-		return "admin/adminOrder";
+		 model.addAttribute("orders", orderService.getAllOrders());
+		 return "admin/adminOrder";
 	}
 	
 	@GetMapping("/new")
@@ -41,16 +44,16 @@ public class OrderController {
 	@PostMapping("/add")
 	public String saveOrder(@ModelAttribute("order") Order order) {
 		orderService.saveOrder(order);
-		return "redirect:/";
+		return "redirect:/admin/order";
 	}
 	
 	@GetMapping("/edit/{id}")
 	public String editOrderForm(@PathVariable Long id, Model model) {
 		model.addAttribute("order", orderService.getOrderById(id));
-		return "editOrder";
+		return "admin/editOrder";
 	}
 
-	@PostMapping("/{id}")
+	@PostMapping("/update/{id}")
 	public String updateOrder(@PathVariable Long id,
 			@ModelAttribute("order") Order order,
 			Model model) {
@@ -66,14 +69,15 @@ public class OrderController {
 		
 		// save updated order object
 		orderService.updateOrder(existingOrder);
-		return "redirect:/orders";		
+		return "redirect:/admin/order";
 	}
 	
 	// handler method to handle delete order request
 	
-	@GetMapping("/{id}")
+	@GetMapping("/delete/{id}")
 	public String deleteOrder(@PathVariable Long id) {
 		orderService.deleteOrderById(id);
-		return "redirect:/orders";
+		return "redirect:/admin/order";
 	}
+	
 }

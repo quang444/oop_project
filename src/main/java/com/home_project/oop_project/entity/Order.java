@@ -2,74 +2,75 @@ package com.home_project.oop_project.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(name = "start_point", nullable = false)
-	private String start_point;
+	private String startPoint;
 	
-	@Column(name = "end_point")
-	private String end_point;
+	@Column(name = "end_point", nullable = false)
+	private String endPoint;
 	
 	@Column(name = "value")
-	private String value;
+	private long value;
 
-	@Column(name = "shipperID")
-	private String shipperID;
+	@Column(name = "shipper_id", nullable = false)
+	private long shipperID;
 
 	@Column(name = "status")
 	private String status;
 	
-	public Order() {
+	public Order(){}
+
+	public Order(String startPoint, String endPoint, long value, long shipperID, String status) {
 		super();
-	}
-	
-	public Order(String start_point,String end_point,String value,String shipperID,String status) {
-		super();
-		this.start_point = start_point;
-		this.end_point = end_point;
+		this.startPoint = startPoint;
+		this.endPoint = endPoint;
 		this.value = value;
 		this.shipperID = shipperID;
 		this.status = status;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	public String getStartPoint() {
-		return start_point;
+		return startPoint;
 	}
-	public void setStartPoint(String start_point) {
-		this.start_point = start_point;
+
+	public void setStartPoint(String startPoint) {
+		this.startPoint = startPoint;
 	}
 
 	public String getEndPoint() {
-		return end_point;
+		return endPoint;
 	}
 
-	public void setEndPoint(String end_point) {
-		this.end_point = end_point;
+	public void setEndPoint(String endPoint) {
+		this.endPoint = endPoint;
 	}
 
-	public String getValue() {
+	public long getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(long value) {
 		this.value = value;
 	}
 
-	public String getShipperID() {
+	public long getShipperID() {
 		return shipperID;
 	}
 
-	public void setShipperID(String shipperID) {
+	public void setShipperID(long shipperID) {
 		this.shipperID = shipperID;
 	}
 
@@ -80,6 +81,4 @@ public class Order {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
 }
